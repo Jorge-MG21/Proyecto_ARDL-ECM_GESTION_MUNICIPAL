@@ -99,10 +99,20 @@ Orden seleccionado por **BIC**: (1, 0, 2, 0, 0, 0)
 
 ## Cómo reproducir
 
+Instalar las librerías necesarias (una por una):
+
 ```r
-install.packages(c("readxl", "writexl", "tseries", "ARDL",
-                   "lmtest", "sandwich", "strucchange", "car"))
+install.packages("readxl")
+install.packages("writexl")
+install.packages("tseries")
+install.packages("ARDL")
+install.packages("lmtest")
+install.packages("sandwich")
+install.packages("strucchange")
+install.packages("car")
 ```
+
+Ejecutar el script:
 
 ```bash
 Rscript scripts/script_ardl_mce.R
