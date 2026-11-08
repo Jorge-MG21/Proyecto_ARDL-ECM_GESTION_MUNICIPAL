@@ -12,7 +12,7 @@
 | Archivo | Descripción |
 |---------|-------------|
 | [`scripts/script_ardl_mce.R`](scripts/script_ardl_mce.R) | Script ARDL + MCE (especificación principal) |
-| [`data/Nueva_dta.csv`](data/Nueva_dta.csv) | Datos mensuales 2015–2025 (serie principal del modelo) |
+| [Datos mensuales 2015–2025](https://usmppe-my.sharepoint.com/:x:/g/personal/jorge_mera_usmp_pe/cQp6h3Aqx54cQbc15RxBmovKEgUC05TUepadvfu6FdXX7PPXow) | Serie principal del modelo (Excel) |
 | [`data/proyectos.csv`](data/proyectos.csv) | Inventario de proyectos de inversión (CUI, montos, avance) |
 | [`results/RESULTADOS_ARDL_MCE.md`](results/RESULTADOS_ARDL_MCE.md) | Informe completo de resultados, tablas e interpretación |
 | [`results/Resultados_consola.txt`](results/Resultados_consola.txt) | Salida completa de la estimación en R |
