@@ -1,0 +1,188 @@
+Observaciones 2018-2025: 96 
+Called from: FUN(X[[i]], ...)
+
+=== ADF ===
+
+=== ADF ===
+         variable p_nivel p_dif1 orden
+1    ln_devengado  0.0100   0.01  I(0)
+2        ln_deuda  0.2401   0.01  I(1)
+3  ln_recaudacion  0.0100   0.01  I(0)
+4     ln_foncomun  0.0449   0.01  I(0)
+5          ln_pim  0.2607   0.01  I(1)
+6 ln_monto_viable  0.0248   0.01  I(0)
+7       Morosidad  0.0100   0.01  I(0)
+
+Tiempo seleccion: 0.1 min
+Mejor orden BIC: 1 0 2 0 0 0 
+Mejor orden AIC: 1 1 0 0 0 2 
+  ln_devengado ln_deuda ln_recaudacion ln_foncomun ln_pim ln_monto_viable       BIC
+1            1        0              2           0      0               0 -78.99163
+2            1        0              3           0      0               0 -74.95592
+3            1        0              2           0      0               1 -74.49804
+4            1        0              2           0      1               1 -70.31074
+5            2        0              2           0      0               2 -70.21195
+Orden usado: 1 0 2 0 0 0 
+
+=== ARDL ===
+
+Time series regression with "ts" data:
+Start = 2018(3), End = 2025(12)
+
+Call:
+dynlm::dynlm(formula = full_formula, data = data, start = start, 
+    end = end)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25798 -0.06256  0.00744  0.07430  0.31907 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          -9.717714   3.525277  -2.757  0.00723 ** 
+L(ln_devengado, 1)   -0.161235   0.085333  -1.889  0.06245 .  
+ln_deuda              0.173840   0.924317   0.188  0.85129    
+ln_recaudacion        0.115340   0.733265   0.157  0.87541    
+L(ln_recaudacion, 1)  0.219800   0.129978   1.691  0.09472 .  
+L(ln_recaudacion, 2)  0.233102   0.133063   1.752  0.08364 .  
+ln_foncomun           0.639913   0.377010   1.697  0.09352 .  
+ln_pim                0.334587   0.222662   1.503  0.13686    
+ln_monto_viable      -0.001432   0.002616  -0.547  0.58572    
+Morosidad            -0.001306   0.024369  -0.054  0.95741    
+DUMMIE_COVID          0.029286   0.061563   0.476  0.63558    
+DUMMIE_Est            0.166439   0.100275   1.660  0.10086    
+n_proyectos_viab     -0.010234   0.014459  -0.708  0.48114    
+D_dic                 0.974652   0.102897   9.472 1.04e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1199 on 80 degrees of freedom
+Multiple R-squared:  0.9311,	Adjusted R-squared:  0.9199 
+F-statistic: 83.18 on 13 and 80 DF,  p-value: < 2.2e-16
+
+
+=== Bounds F ===
+
+	Bounds F-test (Wald) for no cointegration
+
+data:  d(ln_devengado) ~ L(ln_devengado, 1) + ln_deuda + L(ln_recaudacion,     1) + ln_foncomun + ln_pim + ln_monto_viable + d(ln_recaudacion) +     d(L(ln_recaudacion, 1)) + Morosidad + DUMMIE_COVID + DUMMIE_Est +     n_proyectos_viab + D_dic
+F = 32.902, p-value = 1e-06
+alternative hypothesis: Possible cointegration
+null values:
+   k    T 
+   5 1000 
+
+
+=== Bounds t ===
+
+	Bounds t-test for no cointegration
+
+data:  d(ln_devengado) ~ L(ln_devengado, 1) + ln_deuda + L(ln_recaudacion,     1) + ln_foncomun + ln_pim + ln_monto_viable + d(ln_recaudacion) +     d(L(ln_recaudacion, 1)) + Morosidad + DUMMIE_COVID + DUMMIE_Est +     n_proyectos_viab + D_dic
+t = -13.608, p-value = 1e-06
+alternative hypothesis: Possible cointegration
+null values:
+   k    T 
+   5 1000 
+
+
+=== MCE ===
+
+Time series regression with "zooreg" data:
+Start = Mar. 2018, End = Dic. 2025
+
+Call:
+dynlm::dynlm(formula = full_formula, data = data, start = start, 
+    end = end)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25798 -0.06256  0.00744  0.07430  0.31907 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             -9.717714   0.663753 -14.641  < 2e-16 ***
+d(ln_recaudacion)        0.115340   0.113994   1.012  0.31450    
+d(L(ln_recaudacion, 1)) -0.233102   0.070517  -3.306  0.00139 ** 
+Morosidad               -0.001306   0.005903  -0.221  0.82550    
+DUMMIE_COVID             0.029286   0.040059   0.731  0.46674    
+DUMMIE_Est               0.166439   0.094411   1.763  0.08151 .  
+n_proyectos_viab        -0.010234   0.009339  -1.096  0.27626    
+D_dic                    0.974652   0.096019  10.151 2.56e-16 ***
+ect                     -1.161235   0.080181 -14.483  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1163 on 85 degrees of freedom
+  (0 observations deleted due to missingness)
+Multiple R-squared:  0.9525,	Adjusted R-squared:  0.948 
+F-statistic:   213 on 8 and 85 DF,  p-value: < 2.2e-16
+
+
+ECT: -1.1612 | p = 0 | negativo: TRUE | signif 5%: TRUE | -1<rho<0: FALSE 
+
+--- Corto plazo ---
+                        Estimate Std. Error  t value Pr(>|t|)
+(Intercept)              -9.7177     0.6638 -14.6406   0.0000
+d(ln_recaudacion)         0.1153     0.1140   1.0118   0.3145
+d(L(ln_recaudacion, 1))  -0.2331     0.0705  -3.3056   0.0014
+Morosidad                -0.0013     0.0059  -0.2212   0.8255
+DUMMIE_COVID              0.0293     0.0401   0.7311   0.4667
+DUMMIE_Est                0.1664     0.0944   1.7629   0.0815
+n_proyectos_viab         -0.0102     0.0093  -1.0958   0.2763
+D_dic                     0.9747     0.0960  10.1506   0.0000
+
+--- Largo plazo (multiplicadores) ---
+             Term     Estimate  Std. Error    t value    Pr(>|t|)
+1     (Intercept) -8.368431650 3.012254952 -2.7781286 0.006809716
+2        ln_deuda  0.149702669 0.795755480  0.1881265 0.851253891
+3  ln_recaudacion  0.489341814 0.756962845  0.6464542 0.519835569
+4     ln_foncomun  0.551062444 0.324801919  1.6966108 0.093658208
+5          ln_pim  0.288130598 0.193299783  1.4905894 0.140001808
+6 ln_monto_viable -0.001232949 0.002271415 -0.5428108 0.588769171
+
+Breusch-Godfrey orden 1 
+
+	Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  m_ecm
+LM test = 0.45543, df = 1, p-value = 0.4998
+
+
+Breusch-Godfrey orden 4 
+
+	Breusch-Godfrey test for serial correlation of order up to 4
+
+data:  m_ecm
+LM test = 1.9048, df = 4, p-value = 0.7533
+
+
+Breusch-Godfrey orden 12 
+
+	Breusch-Godfrey test for serial correlation of order up to 12
+
+data:  m_ecm
+LM test = 7.1382, df = 12, p-value = 0.8483
+
+
+	Jarque Bera Test
+
+data:  as.numeric(res)
+X-squared = 0.47767, df = 2, p-value = 0.7875
+
+
+	studentized Breusch-Pagan test
+
+data:  m_ecm
+BP = 8.737, df = 8, p-value = 0.365
+
+
+=== Resumen diagnosticos ===
+         prueba estadistico p_valor       conclusion_5pct
+1    BG orden 1      0.4554  0.4998 No se rechaza H0 (OK)
+2    BG orden 4      1.9048  0.7533 No se rechaza H0 (OK)
+3   BG orden 12      7.1382  0.8483 No se rechaza H0 (OK)
+4   Jarque-Bera      0.4777  0.7875 No se rechaza H0 (OK)
+5 Breusch-Pagan      8.7370  0.3650 No se rechaza H0 (OK)
+
+CUSUM recursivo p = 0.954 
+OLS-CUSUM p = 0.4661 
