@@ -52,9 +52,9 @@ Orden seleccionado por **BIC**: (1, 0, 2, 0, 0, 0)
 
 | Fuente | Contenido | Periodo |
 |--------|-----------|--------|
-| **Municipalidad Distrital de José Leonardo Ortiz** (área de Rentas / Tributación) | Deuda predial pendiente de cobro, recaudación de ingresos propios y tasa de morosidad | 2015–2025 |
-| **Sistema de Administración Financiera (SIAF) / MEF** | Devengado de inversión pública, Presupuesto Institucional Modificado (PIM) y transferencias del FONCOMUN | 2015–2025 |
-| **Banco de Inversiones (Invierte.pe) – MEF** | Proyectos de inversión: CUI, fecha de viabilidad, monto viable, costo total, avance financiero y liquidación | 2015–2025 |
+| **Municipalidad Distrital de José Leonardo Ortiz** (área de Rentas / Tributación) | Deuda predial pendiente de cobro, recaudación de ingresos propios y tasa de morosidad | 2018–2025 |
+| **Sistema de Administración Financiera (SIAF) / MEF** | Devengado de inversión pública, Presupuesto Institucional Modificado (PIM) y transferencias del FONCOMUN | 2018–2025 |
+| **Sistema de seguimiento de inversiones (SSI) – MEF** | Proyectos de inversión: fecha de viabilidad, monto viable, costo total, avance financiero y liquidación | 2018–2025 |
 
 - **Unidad de observación:** mes  
 - **Periodo utilizado en el modelo:** enero 2018 – diciembre 2025 (96 observaciones)  
